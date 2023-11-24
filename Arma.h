@@ -22,6 +22,6 @@ public:
 	void setRateOfFire(int);
 	int getAmmoCapacity();
 	void setAmmoCapacity(int);
-	virtual string toString();
+	virtual string toString()=0;
 };
 

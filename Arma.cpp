@@ -55,7 +55,5 @@ void Arma::setAmmoCapacity(int _ammoCapacity) {
 	this->ammoCapacity = _ammoCapacity;
 }
 
-string Arma::toString() {
-	return "";
-}
+
 

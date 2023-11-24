@@ -35,10 +35,36 @@ inline int VectorArmas<T>::cuantosHay() {
 
 template<typename T>
 inline void VectorArmas<T>::imprimir() {
-	for (int i = 0; i < weapons.size(); i++) {
-		cout << "Arma " << i + 1 << ":" << endl;
-		cout << weapons.at(i)->toString() << endl; 
-		cout << "------------------------" << endl;
-	}
+    for (int i = 0; i < weapons.size(); i++) {
+        T* arma = weapons.at(i);
+        if (typeid(*arma) == typeid(Sniper)) {
+            Sniper* sniper = dynamic_cast<Sniper*>(arma);
+            if (sniper != nullptr) {
+                cout << sniper->toString() << endl;
+                cout << "------------------------" << endl;
+            }
+        }
+        else if (typeid(*arma) == typeid(ScarRifle)) {
+            ScarRifle* scarRifle = dynamic_cast<ScarRifle*>(arma);
+            if (scarRifle != nullptr) {
+                cout << scarRifle->toString() << endl;
+                cout << "------------------------" << endl;
+            }
+        }
+        else if (typeid(*arma) == typeid(Shotgun)) {
+            Shotgun* shotgun = dynamic_cast<Shotgun*>(arma);
+            if (shotgun != nullptr) {
+                cout << shotgun->toString() << endl;
+                cout << "------------------------" << endl;
+            }
+        }
+        else if (typeid(*arma) == typeid(GrenadeLauncher)) {
+            GrenadeLauncher* granadas = dynamic_cast<GrenadeLauncher*>(arma);
+            if (granadas != nullptr) {
+                cout << granadas->toString() << endl;
+                cout << "------------------------" << endl;
+            }
+        }
+    }
 }
 

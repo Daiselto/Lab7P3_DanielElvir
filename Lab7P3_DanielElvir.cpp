@@ -235,12 +235,6 @@ void eliminarArma() {
     }
 }
 
-void listarLasArmas() {
-    for (int i = 0; i < armas->cuantosHay(); i++) {
-        cout << "Nombre:" << armas->obtener(i)->toString() << endl;
-    }
-}
-
 void listarArma() {
     if (armas->cuantosHay() > 0) {
         cout << "La lista de las armas existentes es: " << endl;
@@ -252,6 +246,7 @@ void listarArma() {
         cout << endl;
     }
 }
+
 
 void simularBatalla() {
     if (armas->cuantosHay() > 0) {
