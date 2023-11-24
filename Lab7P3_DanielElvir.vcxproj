@@ -127,7 +127,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Arma.cpp" />
+    <ClCompile Include="Campo.cpp" />
+    <ClCompile Include="GrenadeLauncher.cpp" />
     <ClCompile Include="Lab7P3_DanielElvir.cpp" />
+    <ClCompile Include="ScarRifle.cpp" />
+    <ClCompile Include="Shotgun.cpp" />
+    <ClCompile Include="Sniper.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Arma.h" />
+    <ClInclude Include="Campo.h" />
+    <ClInclude Include="GrenadeLauncher.h" />
+    <ClInclude Include="ScarRifle.h" />
+    <ClInclude Include="Shotgun.h" />
+    <ClInclude Include="Sniper.h" />
+    <ClInclude Include="VectorArmas.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
