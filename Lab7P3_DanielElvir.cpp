@@ -1,5 +1,9 @@
 #include <iostream>
-#include"Arma.h"
+#include "Arma.h"
+#include "ScarRifle.h"
+#include "Shotgun.h"
+#include "Sniper.h"
+#include "GrenadeLauncher.h"
 #include "VectorArmas.h"
 using namespace std;
 
@@ -15,6 +19,166 @@ void menu() {
     cout << "6. Salir" << endl;
 }
 
+void agregarScar() {
+    int damage;
+    int range;
+    int rateOfFire;
+    int ammoCapacity;
+    int accuracy;
+    cout << "Bienvenido a la opción de agregar un ScarRifle" << endl;
+    cout << "Ingrese el daño por disparo (Solo puede ser un valor entre 50 y 200)" << endl;
+    cin >> damage;
+    while (damage < 50 || damage>200) {
+        cout << "Tiene que ser un valor entre 50 y 200" << endl;
+        cin >> damage;
+    }
+    cout << "Ingrese el alcance del arma (Tiene que ser un valor entre 1 y 10)" << endl;
+    cin >> range;
+    while (range < 1 || range>10) {
+        cout << "Tiene que ser un valor entre 1 y 10" << endl;
+        cin >> range;
+    }
+    cout << "Ingrese la tasa de disparo del arma (Tiene que ser un valor entre 1 y 5)" << endl;
+    cin >> rateOfFire;
+    while (rateOfFire < 1 || rateOfFire > 5) {
+        cout << "Tiene que ser un valor entre 1 y 5" << endl;
+        cin >> rateOfFire;
+    }
+    cout << "Ingrese la capacidad de munición (Tiene que ser un valor entre 1 y 30)" << endl;
+    cin >> ammoCapacity;
+    while (ammoCapacity < 1 || ammoCapacity > 30) {
+        cout << "Tiene que ser un valor entre 1 y 30" << endl;
+        cin >> ammoCapacity;
+    }
+    cout << "Ingrese la precisión de la Scar (Tiene que ser un valor entre 70 y 95)" << endl;
+    cin >> accuracy;
+    while (accuracy < 70 || accuracy > 95) {
+        cout << "Tiene que ser un valor entre 70 y 95" << endl;
+        cin >> accuracy;
+    }
+    Arma* scar = new ScarRifle(damage, range, rateOfFire, ammoCapacity, accuracy);
+    armas->agregar(scar);
+}
+
+void agregarShotgun() {
+    int damage;
+    int range;
+    int rateOfFire;
+    int ammoCapacity;
+    int spread;
+    cout << "Bienvenido a la opción de agregar un Shotgun" << endl;
+    cout << "Ingrese el daño por disparo (Solo puede ser un valor entre 50 y 200)" << endl;
+    cin >> damage;
+    while (damage < 50 || damage>200) {
+        cout << "Tiene que ser un valor entre 50 y 200" << endl;
+        cin >> damage;
+    }
+    cout << "Ingrese el alcance del arma (Tiene que ser un valor entre 1 y 10)" << endl;
+    cin >> range;
+    while (range < 1 || range>10) {
+        cout << "Tiene que ser un valor entre 1 y 10" << endl;
+        cin >> range;
+    }
+    cout << "Ingrese la tasa de disparo del arma (Tiene que ser un valor entre 1 y 5)" << endl;
+    cin >> rateOfFire;
+    while (rateOfFire < 1 || rateOfFire > 5) {
+        cout << "Tiene que ser un valor entre 1 y 5" << endl;
+        cin >> rateOfFire;
+    }
+    cout << "Ingrese la capacidad de munición (Tiene que ser un valor entre 1 y 30)" << endl;
+    cin >> ammoCapacity;
+    while (ammoCapacity < 1 || ammoCapacity > 30) {
+        cout << "Tiene que ser un valor entre 1 y 30" << endl;
+        cin >> ammoCapacity;
+    }
+    cout << "Ingresar la dispersión de la shotgun" << endl;
+    cin >> spread;
+    Arma* shotgun = new Shotgun(damage, range, rateOfFire, ammoCapacity, spread);
+    armas->agregar(shotgun);
+}
+
+void agregarSniper() {
+    int damage;
+    int range;
+    int rateOfFire;
+    int ammoCapacity;
+    int zoomLevel;
+    cout << "Bienvenido a la opción de agregar un Sniper" << endl;
+    cout << "Ingrese el daño por disparo (Solo puede ser un valor entre 50 y 200)" << endl;
+    cin >> damage;
+    while (damage < 50 || damage>200) {
+        cout << "Tiene que ser un valor entre 50 y 200" << endl;
+        cin >> damage;
+    }
+    cout << "Ingrese el alcance del arma (Tiene que ser un valor entre 1 y 10)" << endl;
+    cin >> range;
+    while (range < 1 || range>10) {
+        cout << "Tiene que ser un valor entre 1 y 10" << endl;
+        cin >> range;
+    }
+    cout << "Ingrese la tasa de disparo del arma (Tiene que ser un valor entre 1 y 5)" << endl;
+    cin >> rateOfFire;
+    while (rateOfFire < 1 || rateOfFire > 5) {
+        cout << "Tiene que ser un valor entre 1 y 5" << endl;
+        cin >> rateOfFire;
+    }
+    cout << "Ingrese la capacidad de munición (Tiene que ser un valor entre 1 y 30)" << endl;
+    cin >> ammoCapacity;
+    while (ammoCapacity < 1 || ammoCapacity > 30) {
+        cout << "Tiene que ser un valor entre 1 y 30" << endl;
+        cin >> ammoCapacity;
+    }
+    cout << "Ingrese el nivel de Zoom de su sniper (Tiene que ser un valor entre 4 y 12)" << endl;
+    cin >> zoomLevel;
+    while (zoomLevel < 4 || zoomLevel > 12) {
+        cout << "Tiene que ser un valor entre 4 y 12" << endl;
+        cin >> zoomLevel;
+    }
+    Arma* sniper = new ScarRifle(damage, range, rateOfFire, ammoCapacity, zoomLevel);
+    armas->agregar(sniper);
+}
+
+void agregarGrenadeLauncher() {
+    int damage;
+    int range;
+    int rateOfFire;
+    int ammoCapacity;
+    int explosionRadius;
+    cout << "Bienvenido a la opción de agregar un Grenade Launcher" << endl;
+    cout << "Ingrese el daño por disparo (Solo puede ser un valor entre 50 y 200)" << endl;
+    cin >> damage;
+    while (damage < 50 || damage>200) {
+        cout << "Tiene que ser un valor entre 50 y 200" << endl;
+        cin >> damage;
+    }
+    cout << "Ingrese el alcance del arma (Tiene que ser un valor entre 1 y 10)" << endl;
+    cin >> range;
+    while (range < 1 || range>10) {
+        cout << "Tiene que ser un valor entre 1 y 10" << endl;
+        cin >> range;
+    }
+    cout << "Ingrese la tasa de disparo del arma (Tiene que ser un valor entre 1 y 5)" << endl;
+    cin >> rateOfFire;
+    while (rateOfFire < 1 || rateOfFire > 5) {
+        cout << "Tiene que ser un valor entre 1 y 5" << endl;
+        cin >> rateOfFire;
+    }
+    cout << "Ingrese la capacidad de munición (Tiene que ser un valor entre 1 y 30)" << endl;
+    cin >> ammoCapacity;
+    while (ammoCapacity < 1 || ammoCapacity > 30) {
+        cout << "Tiene que ser un valor entre 1 y 30" << endl;
+        cin >> ammoCapacity;
+    }
+    cout << "Ingresar el radio de explosión (Tiene que ser un valor entre 3 y 10)" << endl;
+    cin >> explosionRadius;
+    while (explosionRadius < 3 || explosionRadius > 10) {
+        cout << "Tiene que ser un valor entre 3 y 10" << endl;
+        cin >> ammoCapacity;
+    }
+    Arma* granadas = new ScarRifle(damage, range, rateOfFire, ammoCapacity, explosionRadius);
+    armas->agregar(granadas);
+}
+
 void agregarArma() {
     int opcion;
     cout << "Que arma desea agregar?" << endl;
@@ -27,127 +191,19 @@ void agregarArma() {
     switch (opcion) {
     
     case 1:
-        int damage;
-        int range;
-        int rateOfFire;
-        int ammoCapacity;
-        cout << "Ingrese el daño por disparo (Solo puede ser un valor entre 50 y 200)" << endl;
-        cin >> damage;
-        while (damage<50||damage>200) {
-            cout << "Tiene que ser un valor entre 50 y 200" << endl;
-            cin >> damage;
-        }
-        cout << "Ingrese el alcance del arma (Tiene que ser un valor entre 1 y 10)" << endl;
-        cin >> range;
-        while (range<1||range>10) {
-            cout << "Tiene que ser un valor entre 1 y 10" << endl;
-            cin >> range;
-        }
-        cout << "Ingrese la tasa de disparo del arma (Tiene que ser un valor entre 1 y 5)" << endl;
-        cin >> rateOfFire;
-        while (rateOfFire < 1 || rateOfFire > 5) {
-            cout << "Tiene que ser un valor entre 1 y 5" << endl;
-            cin >> rateOfFire;
-        }
-        cout << "Ingrese la capacidad de munición (Tiene que ser un valor entre 1 y 30)" << endl;
-        cin >> ammoCapacity;
-        while (ammoCapacity < 1 || ammoCapacity > 30) {
-            cout << "Tiene que ser un valor entre 1 y 30" << endl;
-            cin >> ammoCapacity;
-        }
+        agregarScar();
         break;
 
     case 2:
-        int damage;
-        int range;
-        int rateOfFire;
-        int ammoCapacity;
-        cout << "Ingrese el daño por disparo (Solo puede ser un valor entre 50 y 200)" << endl;
-        cin >> damage;
-        while (damage < 50 || damage>200) {
-            cout << "Tiene que ser un valor entre 50 y 200" << endl;
-            cin >> damage;
-        }
-        cout << "Ingrese el alcance del arma (Tiene que ser un valor entre 1 y 10)" << endl;
-        cin >> range;
-        while (range < 1 || range>10) {
-            cout << "Tiene que ser un valor entre 1 y 10" << endl;
-            cin >> range;
-        }
-        cout << "Ingrese la tasa de disparo del arma (Tiene que ser un valor entre 1 y 5)" << endl;
-        cin >> rateOfFire;
-        while (rateOfFire < 1 || rateOfFire > 5) {
-            cout << "Tiene que ser un valor entre 1 y 5" << endl;
-            cin >> rateOfFire;
-        }
-        cout << "Ingrese la capacidad de munición (Tiene que ser un valor entre 1 y 30)" << endl;
-        cin >> ammoCapacity;
-        while (ammoCapacity < 1 || ammoCapacity > 30) {
-            cout << "Tiene que ser un valor entre 1 y 30" << endl;
-            cin >> ammoCapacity;
-        }
+        agregarShotgun();
         break;
 
     case 3:
-        int damage;
-        int range;
-        int rateOfFire;
-        int ammoCapacity;
-        cout << "Ingrese el daño por disparo (Solo puede ser un valor entre 50 y 200)" << endl;
-        cin >> damage;
-        while (damage < 50 || damage>200) {
-            cout << "Tiene que ser un valor entre 50 y 200" << endl;
-            cin >> damage;
-        }
-        cout << "Ingrese el alcance del arma (Tiene que ser un valor entre 1 y 10)" << endl;
-        cin >> range;
-        while (range < 1 || range>10) {
-            cout << "Tiene que ser un valor entre 1 y 10" << endl;
-            cin >> range;
-        }
-        cout << "Ingrese la tasa de disparo del arma (Tiene que ser un valor entre 1 y 5)" << endl;
-        cin >> rateOfFire;
-        while (rateOfFire < 1 || rateOfFire > 5) {
-            cout << "Tiene que ser un valor entre 1 y 5" << endl;
-            cin >> rateOfFire;
-        }
-        cout << "Ingrese la capacidad de munición (Tiene que ser un valor entre 1 y 30)" << endl;
-        cin >> ammoCapacity;
-        while (ammoCapacity < 1 || ammoCapacity > 30) {
-            cout << "Tiene que ser un valor entre 1 y 30" << endl;
-            cin >> ammoCapacity;
-        }
+        agregarSniper();
         break;
 
     case 4:
-        int damage;
-        int range;
-        int rateOfFire;
-        int ammoCapacity;
-        cout << "Ingrese el daño por disparo (Solo puede ser un valor entre 50 y 200)" << endl;
-        cin >> damage;
-        while (damage < 50 || damage>200) {
-            cout << "Tiene que ser un valor entre 50 y 200" << endl;
-            cin >> damage;
-        }
-        cout << "Ingrese el alcance del arma (Tiene que ser un valor entre 1 y 10)" << endl;
-        cin >> range;
-        while (range < 1 || range>10) {
-            cout << "Tiene que ser un valor entre 1 y 10" << endl;
-            cin >> range;
-        }
-        cout << "Ingrese la tasa de disparo del arma (Tiene que ser un valor entre 1 y 5)" << endl;
-        cin >> rateOfFire;
-        while (rateOfFire < 1 || rateOfFire > 5) {
-            cout << "Tiene que ser un valor entre 1 y 5" << endl;
-            cin >> rateOfFire;
-        }
-        cout << "Ingrese la capacidad de munición (Tiene que ser un valor entre 1 y 30)" << endl;
-        cin >> ammoCapacity;
-        while (ammoCapacity < 1 || ammoCapacity > 30) {
-            cout << "Tiene que ser un valor entre 1 y 30" << endl;
-            cin >> ammoCapacity;
-        }
+        agregarGrenadeLauncher();
         break;
 
     default:
@@ -159,19 +215,53 @@ void agregarArma() {
 }
 
 void modificarArma() {
+    if (armas->cuantosHay()>0) {
 
+    } else {
+        cout << "Tiene que agregar un arma primero" << endl;
+        cout << "Volviendo al menu principal" << endl;
+        cout << endl;
+    }
 }
 
 void eliminarArma() {
+    if (armas->cuantosHay() > 0) {
 
+    }
+    else {
+        cout << "Tiene que agregar un arma primero" << endl;
+        cout << "Volviendo al menu principal" << endl;
+        cout << endl;
+    }
+}
+
+void listarLasArmas() {
+    for (int i = 0; i < armas->cuantosHay(); i++) {
+        cout << "Nombre:" << armas->obtener(i)->toString() << endl;
+    }
 }
 
 void listarArma() {
-
+    if (armas->cuantosHay() > 0) {
+        cout << "La lista de las armas existentes es: " << endl;
+        armas->imprimir();
+    }
+    else {
+        cout << "Tiene que agregar un arma primero" << endl;
+        cout << "Volviendo al menu principal" << endl;
+        cout << endl;
+    }
 }
 
 void simularBatalla() {
+    if (armas->cuantosHay() > 0) {
 
+    }
+    else {
+        cout << "Tiene que agregar un arma primero" << endl;
+        cout << "Volviendo al menu principal" << endl;
+        cout << endl;
+    }
 }
 
 int main() {
@@ -207,6 +297,7 @@ int main() {
             cout << "Gracias por usar el programa" << endl;
             cout << "Saliendo...." << endl;
             cout << endl;
+            delete armas;
             seguir = false;
             break;
 

@@ -23,3 +23,11 @@ double Shotgun::getFactorEspecial() {
 void Shotgun::setFactorEspecial() {
 	this->factorEspecial = 1 / spread;
 }
+
+double Shotgun::disparar() {
+	return (rateOfFire * damage * factorEspecial);
+}
+
+string Shotgun::toString() {
+	return "Shotgun con dispersión de: "+spread;
+}

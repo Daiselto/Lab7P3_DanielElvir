@@ -23,3 +23,11 @@ double GrenadeLauncher::getFactorEspecial() {
 void GrenadeLauncher::setFactorEspecial() {
 	this->factorEspecial = 1 + (explosionRadius / 10);
 }
+
+double GrenadeLauncher::disparar() {
+	return (rateOfFire * damage * factorEspecial);
+}
+
+string GrenadeLauncher::toString() {
+	return "Grenade Launcher con radio de explosión de: " + explosionRadius;
+}

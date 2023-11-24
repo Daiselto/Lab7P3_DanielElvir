@@ -11,9 +11,9 @@ protected:
 public:
 	Arma();
 	Arma(int, int, int, int);
-	virtual double disparar();
-	virtual double getFactorEspecial();
-	virtual void setFactorEspecial();
+	virtual double disparar()=0;
+	virtual double getFactorEspecial()=0;
+	virtual void setFactorEspecial()=0;
 	int getDamage();
 	void setDamage(int);
 	int getRange();

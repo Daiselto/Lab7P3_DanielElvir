@@ -24,6 +24,14 @@ void ScarRifle::setFactorEspecial() {
 	this->factorEspecial = accuracy / 50;
 }
 
+double ScarRifle::disparar() {
+	return (rateOfFire*damage*factorEspecial);
+}
+
+string ScarRifle::toString() {
+	return "ScarRifle de precisión de: " + accuracy;
+}
+
 
 
 

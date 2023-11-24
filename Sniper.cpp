@@ -23,3 +23,11 @@ double Sniper::getFactorEspecial() {
 void Sniper::setFactorEspecial() {
 	this->factorEspecial = zoomLevel / 10;
 }
+
+double Sniper::disparar() {
+	return (rateOfFire * damage * factorEspecial);
+}
+
+string Sniper::toString() {
+	return "Sniper con nivel de Zoom de: " + zoomLevel;
+}
