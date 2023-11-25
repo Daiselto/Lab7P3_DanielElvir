@@ -29,5 +29,5 @@ double GrenadeLauncher::disparar() {
 }
 
 string GrenadeLauncher::toString() {
-	return "Grenade Launcher con radio de explosión de: " + explosionRadius;
+	return "Grenade Launcher con radio de explosión de: " + to_string(explosionRadius);
 }

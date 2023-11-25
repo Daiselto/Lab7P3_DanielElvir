@@ -29,7 +29,7 @@ double ScarRifle::disparar() {
 }
 
 string ScarRifle::toString() {
-	return "ScarRifle de precisión de: " + accuracy;
+	return "ScarRifle de precisión de: " + to_string(accuracy);
 }
 
 

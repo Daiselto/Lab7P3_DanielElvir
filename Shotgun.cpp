@@ -29,5 +29,5 @@ double Shotgun::disparar() {
 }
 
 string Shotgun::toString() {
-	return "Shotgun con dispersión de: "+spread;
+	return "Shotgun con dispersión de: "+ to_string(spread);
 }

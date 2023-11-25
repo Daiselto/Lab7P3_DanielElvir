@@ -25,8 +25,17 @@ inline Arma* VectorArmas<T>::obtener(int i) {
 
 template<typename T>
 inline void VectorArmas<T>::eliminar(int i) {
-	weapons.erase(i);
+    int index = i - 1; 
+    if (index >= 0 && index < weapons.size()) {
+        delete weapons[index]; 
+        weapons.erase(weapons.begin() + index);
+        cout << "Eliminado exitosamente" << endl;
+    }
+    else {
+        std::cout << "Número de arma no válido. No se pudo eliminar el arma." << std::endl;
+    }
 }
+
 
 template<typename T>
 inline int VectorArmas<T>::cuantosHay() {
@@ -35,36 +44,35 @@ inline int VectorArmas<T>::cuantosHay() {
 
 template<typename T>
 inline void VectorArmas<T>::imprimir() {
-    for (int i = 0; i < weapons.size(); i++) {
-        T* arma = weapons.at(i);
-        if (typeid(*arma) == typeid(Sniper)) {
-            Sniper* sniper = dynamic_cast<Sniper*>(arma);
+    int cont = 0;
+    for (T* arma : weapons) {
+        Sniper* sniper = dynamic_cast<Sniper*>(arma);
+        ScarRifle* scarRifle = dynamic_cast<ScarRifle*>(arma);
+        Shotgun* shotgun = dynamic_cast<Shotgun*>(arma);
+        GrenadeLauncher* granadas = dynamic_cast<GrenadeLauncher*>(arma);
             if (sniper != nullptr) {
+                cout << ++cont << "- ";
                 cout << sniper->toString() << endl;
                 cout << "------------------------" << endl;
             }
-        }
-        else if (typeid(*arma) == typeid(ScarRifle)) {
-            ScarRifle* scarRifle = dynamic_cast<ScarRifle*>(arma);
+        
             if (scarRifle != nullptr) {
+                cout << ++cont << "- ";
                 cout << scarRifle->toString() << endl;
                 cout << "------------------------" << endl;
             }
-        }
-        else if (typeid(*arma) == typeid(Shotgun)) {
-            Shotgun* shotgun = dynamic_cast<Shotgun*>(arma);
+            
             if (shotgun != nullptr) {
+                cout << ++cont << "- ";
                 cout << shotgun->toString() << endl;
                 cout << "------------------------" << endl;
             }
-        }
-        else if (typeid(*arma) == typeid(GrenadeLauncher)) {
-            GrenadeLauncher* granadas = dynamic_cast<GrenadeLauncher*>(arma);
+            
             if (granadas != nullptr) {
+                cout << ++cont << "- ";
                 cout << granadas->toString() << endl;
                 cout << "------------------------" << endl;
             }
-        }
     }
 }
 

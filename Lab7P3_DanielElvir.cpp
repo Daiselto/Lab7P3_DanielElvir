@@ -226,7 +226,11 @@ void modificarArma() {
 
 void eliminarArma() {
     if (armas->cuantosHay() > 0) {
-
+        int indice;
+        armas->imprimir();
+        cout << "Ingrese el que quiere eliminar" << endl;
+        cin >> indice;
+        armas->eliminar(indice);
     }
     else {
         cout << "Tiene que agregar un arma primero" << endl;
@@ -250,7 +254,11 @@ void listarArma() {
 
 void simularBatalla() {
     if (armas->cuantosHay() > 0) {
-
+        int targets;
+        cout << "Ingrese la cantidad de targets en el campo: ";
+        cin >> targets;
+        cout << "Seleccione dos armas para realizar la simulación" << endl;
+        
     }
     else {
         cout << "Tiene que agregar un arma primero" << endl;
