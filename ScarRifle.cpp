@@ -6,6 +6,7 @@ ScarRifle::ScarRifle(){
 ScarRifle::ScarRifle(int _damage, int _range, int _rateOfFire, int _ammoCapacity, int _accuracy) 
 	: Arma(_damage, _range, _rateOfFire, _ammoCapacity) {
 	this->accuracy = _accuracy;
+	this->factorEspecial = accuracy / 50.0;
 }
 
 int ScarRifle::getAccuracy() {
@@ -21,7 +22,7 @@ double ScarRifle::getFactorEspecial() {
 }
 
 void ScarRifle::setFactorEspecial() {
-	this->factorEspecial = accuracy / 50;
+	this->factorEspecial = accuracy / 50.0;
 }
 
 double ScarRifle::disparar() {

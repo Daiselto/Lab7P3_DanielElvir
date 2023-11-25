@@ -6,6 +6,7 @@ Shotgun::Shotgun() {
 Shotgun::Shotgun(int _damage, int _range, int _rateOfFire, int _ammoCapacity, int _spread) 
 	: Arma(_damage, _range, _rateOfFire, _ammoCapacity) {
 	this->spread=_spread;
+	this->factorEspecial = 1.0 / spread;
 }
 
 int Shotgun::getSpread() {
@@ -21,7 +22,7 @@ double Shotgun::getFactorEspecial() {
 }
 
 void Shotgun::setFactorEspecial() {
-	this->factorEspecial = 1 / spread;
+	this->factorEspecial = 1.0 / spread;
 }
 
 double Shotgun::disparar() {

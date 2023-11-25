@@ -10,6 +10,10 @@ Arma::Arma(int _damage, int _range, int _rateOfFire, int _ammoCapacity) {
 	this->ammoCapacity = _ammoCapacity;
 }
 
+Arma::~Arma() {
+	delete this;
+}
+
 double Arma::disparar() {
 	return 0.0;
 }

@@ -4,8 +4,8 @@ class Campo {
 	Arma* arma1;
 	Arma* arma2;
 	int targets;
-	int timeTakenArma1;
-	int timeTakenArma2;
+	double timeTakenArma1;
+	double timeTakenArma2;
 public:	
 	Campo();
 	Campo(int, Arma*, Arma*);

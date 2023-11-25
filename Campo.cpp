@@ -20,10 +20,10 @@ void Campo::simulateBattle() {
 	cout << "timetaken Arma 2: " << this->timeTakenArma2 << endl;
 	cout << endl;
 	if (timeTakenArma1>timeTakenArma2) {
-		cout << "El ganador es el arma 1" << endl;
+		cout << "El ganador es el arma 1 con eficiencia de " <<arma1->disparar() << endl;
 	}
 	else if(timeTakenArma2 > timeTakenArma1) {
-		cout << "El ganador es el arma 2" << endl;
+		cout << "El ganador es el arma 2 con eficiencia de " << arma2->disparar() << endl;
 	}
 	else {
 		cout << "Es empate" << endl;

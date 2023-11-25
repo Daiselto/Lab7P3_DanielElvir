@@ -6,6 +6,7 @@ Sniper::Sniper() {
 Sniper::Sniper(int _damage, int _range, int _rateOfFire, int _ammoCapacity, int _zoomLevel) 
 	: Arma(_damage, _range, _rateOfFire, _ammoCapacity) {
 	this->zoomLevel = _zoomLevel;
+	this->factorEspecial = zoomLevel / 10.0;
 }
 
 int Sniper::getzoomLevel() {
@@ -21,7 +22,7 @@ double Sniper::getFactorEspecial() {
 }
 
 void Sniper::setFactorEspecial() {
-	this->factorEspecial = zoomLevel / 10;
+	this->factorEspecial = zoomLevel / 10.0;
 }
 
 double Sniper::disparar() {

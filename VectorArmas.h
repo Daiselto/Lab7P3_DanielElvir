@@ -6,12 +6,23 @@ template <typename T>
 class VectorArmas {
 	vector<T*> weapons;
 public:
-	void agregar(T*);
+    ~VectorArmas();
+    void agregar(T*);
 	Arma* obtener(int);
 	void eliminar(int);
 	int cuantosHay();
 	void imprimir();
+    void imprimirConEficiencia();
+    void modificar(T*,int);
 };
+
+template<typename T>
+inline VectorArmas<T>::~VectorArmas() {
+    for (T* arma : weapons) {
+        delete arma;
+    }
+    weapons.clear();
+}
 
 template<typename T>
 inline void VectorArmas<T>::agregar(T* xd) {
@@ -74,5 +85,41 @@ inline void VectorArmas<T>::imprimir() {
                 cout << "------------------------" << endl;
             }
     }
+}
+
+template<typename T>
+inline void VectorArmas<T>::imprimirConEficiencia() {
+    int cont = 0;
+    for (T* arma : weapons) {
+        Sniper* sniper = dynamic_cast<Sniper*>(arma);
+        ScarRifle* scarRifle = dynamic_cast<ScarRifle*>(arma);
+        Shotgun* shotgun = dynamic_cast<Shotgun*>(arma);
+        GrenadeLauncher* granadas = dynamic_cast<GrenadeLauncher*>(arma);
+        if (sniper != nullptr) {
+            cout << ++cont << "- ";
+            cout << "Sniper (Eficiencia: " << sniper->disparar() << ")" << endl;            
+        }
+
+        if (scarRifle != nullptr) {
+            cout << ++cont << "- ";
+            cout << "ScarRifle (Eficiencia: " << scarRifle->disparar() << ")" << endl;            
+        }
+
+        if (shotgun != nullptr) {
+            cout << ++cont << "- ";
+            cout << "Shotgun (Eficiencia: " << shotgun->disparar() << ")" << endl;            
+        }
+
+        if (granadas != nullptr) {
+            cout << ++cont << "- ";
+            cout << "GrenadeLauncher (Eficiencia: " << granadas->disparar() << ")" << endl;            
+        }
+    }
+    
+}
+
+template<typename T>
+inline void VectorArmas<T>::modificar(T* xd, int i) {
+    weapons[i] = xd;
 }
 
